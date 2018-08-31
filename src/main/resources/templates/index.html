@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:text-align="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>代码统计</title>
+    <script src="../WebResource/jquery-3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../WebResource/bootstrap-4.0.0/css/bootstrap.css/bootstrap.min.css"/>
+    <script src="../static/bootstrap-4.0.0/js/bootstrap.js/bootstrap.min.js"></script>
+    <script src="../static/vue.js-2.5.17/vue.min.js"></script>
+</head>
+<body>
+<div>
+    <div>
+        <h1 >代码统计</h1>
+    </div>
+    <table width="400" border="1" cellspacing="0" cellpadding="0">
+    <thead>
+    <tr>
+        <th width="105">ID</th>
+        <th width="105">用户名</th>
+        <th width="105">增加代码行数</th>
+        <th width="105">删除代码行数</th>
+        <th width="105">代码增量</th>
+        <th width="105">提交时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="code:${codes}">
+        <td width="105"   th:text="${code.id}">ID</td>
+        <td width="105"  th:text="${code.username}">用户名</td>
+        <td width="105"  th:text="${code.add}">增加代码行数</td>
+        <td width="105"  th:text="${code.remove}">删除代码行数</td>
+        <td width="105"  th:text="${code.increment}">代码增量</td>
+        <td width="105"  th:text="${code.datetime}">提交时间</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<script>
+
+</script>
+</body>
+</html>
